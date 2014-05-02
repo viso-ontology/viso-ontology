@@ -98,13 +98,6 @@ viso-data:Discrete_Variable
       swstatus:term_status
               "stable"^^xsd:string .
 
-viso-data:Distorted_Data
-      rdf:type owl:Class ;
-      rdfs:label "Distorted Data" ;
-      rdfs:subClassOf viso-data:Data ;
-      swstatus:term_status
-              "stable"^^xsd:string .
-
 viso-data:Domain
       rdf:type owl:Class ;
       rdfs:label "Domain" ;
@@ -139,6 +132,7 @@ viso-data:Interval_Scale_of_Measurement
 
 viso-data:Linked_Data_Structure
       rdf:type owl:Class ;
+      rdfs:comment "We distinguish linked data structures from other structures such as tabular structures.";
       rdfs:label "Linked Data Structure" ;
       rdfs:subClassOf viso-data:Data_Structure ;
       swstatus:term_status
@@ -167,13 +161,6 @@ viso-data:Multivariate_Data
       rdfs:label "Multivariate Data" ;
       rdfs:subClassOf viso-data:Structured_Data .
 
-viso-data:Nominal_Data
-      rdf:type owl:Class ;
-      rdfs:label "Nominal Data" ;
-      rdfs:subClassOf viso-data:Data ;
-      swstatus:term_status
-              "stable"^^xsd:string .
-
 viso-data:Nominal_Scale_of_Measurement
       rdf:type owl:Class ;
       rdfs:label "Nominal Scale of Measurement" ;
@@ -186,13 +173,6 @@ viso-data:One-Dimensional_Data
       rdfs:label "One-Dimensional Data" ;
       rdfs:subClassOf viso-data:Data ;
       .
-
-viso-data:Ordinal_Data
-      rdf:type owl:Class ;
-      rdfs:label "Ordinal Data" ;
-      rdfs:subClassOf viso-data:Data ;
-      swstatus:term_status
-              "stable"^^xsd:string .
 
 viso-data:Ordinal_Scale_of_Measurement
       rdf:type owl:Class ;
@@ -213,14 +193,6 @@ viso-data:Polyarchy
       rdf:type owl:Class ;
       rdfs:label "Polyarchy" ;
       rdfs:subClassOf viso-data:Graph .
-
-viso-data:Quantitative_Data
-      rdf:type owl:Class ;
-      rdfs:label "Quantitative Data" ;
-      rdfs:subClassOf viso-data:Data ;
-      swstatus:term_status
-              "stable"^^xsd:string ;
-      skos:related viso-data:has_quantitative_value .
 
 viso-data:Quantitative_Scale_of_Measurement
       rdf:type owl:Class ;
@@ -251,7 +223,6 @@ viso-data:Relation
       rdfs:label "Relation" ;
       rdfs:subClassOf owl:Thing ;
       .
-
 
 viso-data:Spatial_Data
       rdf:type owl:Class ;
@@ -342,7 +313,6 @@ viso-data:has_numeral_value
       rdfs:label "has numeral value"^^xsd:string ;
       swstatus:term_status
               "stable"^^xsd:string ;
-      skos:editorialNote "This is redundant/alternative to the assignment of a scale of measurement to a property or data variable. Creating subproperties of (e.g.) has_ordinal_value , however, seems the simpler way, given that each property can only have a single scale of measurement."^^xsd:string ;
       skos:example "Assign \"1\" to \"small\", \"2\" to \"medium\" and \"3\" to big. This creates an ordinal scale. By using subproperties, it can be further defined, if even more than an ordinal scale applies (interval, ratio)."^^xsd:string .
 
 viso-data:has_ordinal_value
