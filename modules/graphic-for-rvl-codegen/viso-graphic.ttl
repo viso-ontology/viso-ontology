@@ -37,6 +37,21 @@ viso-graphic:Chronological_Link_Diagram
       swstatus:term_status
       		"stable"^^xsd:string .
       		
+viso-graphic:Color
+      rdf:type owl:Class ;
+      rdfs:label "Color" ;
+      rdfs:subClassOf viso-graphic:Color_Attribute .
+      		
+      		
+viso-graphic:Containment_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Containment"^^xsd:string ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+      dct:description "The containment relation is actually binary, but this class is still needed to allow for properly assigning the roles container and containee to the involved graphic objects."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string ;
+   	  .      		
+      		
 viso-graphic:Dynamic_Graphic_Representation
       rdf:type owl:Class ;
       rdfs:label "Dynamic Graphic Representation" ;
@@ -72,6 +87,38 @@ viso-graphic:Geometric_Zoom
       rdfs:subClassOf viso-graphic:Interactive_Technique ;
       swstatus:term_status
               "stable"^^xsd:string .
+              
+viso-graphic:GraphicAttribute
+      rdf:type rdfs:Class ;
+      rdfs:label "GraphicAttribute" ;
+      rdfs:subClassOf viso-graphic:GraphicRelation ;
+      dct:description "The class of all properties that are graphic attribute relations"^^xsd:string ;
+      .
+
+viso-graphic:GraphicAttributeContinuous
+      rdf:type rdfs:Class ;
+      rdfs:label "GraphicAttributeContinuous" ;
+      rdfs:subClassOf viso-graphic:GraphicAttribute , owl:DatatypeProperty .
+
+viso-graphic:GraphicAttributeDiscrete
+      rdf:type rdfs:Class ;
+      rdfs:label "GraphicAttributeDiscrete" ;
+      rdfs:subClassOf viso-graphic:GraphicAttribute , owl:ObjectProperty .
+
+viso-graphic:GraphicObjectToObjectRelation
+      rdf:type rdfs:Class ;
+      rdfs:label "GraphicObjectToObjectRelation" ;
+      rdfs:subClassOf viso-graphic:GraphicRelation , owl:ObjectProperty ;
+      dct:description "The class of all properties that are visual relations between complex objects. Visual relations build visual (syntactic) object-to-object structures."^^xsd:string ;
+      .
+
+viso-graphic:GraphicRelation
+      rdf:type rdfs:Class ;
+      rdfs:comment "Spatial / Non-Spatial , Attribute / Object2Object  and Binary/N-Ary are facets of graphic relations, however here classes are build according to the actually existing properties. It could also be considered to call GraphicAttributes Object-to-Space-Relations and always state the space with an N-ary relations. This has been avoided for now for the sake of simplicity. Still it could become necessary, e.g. in order to allow world-within-world positioning (nested coordinate systems). For non-spatial relations it's harder to imagine such cases, but there may be some. It will probabal be too hard to differentiate multiple nested spaces, e.g. for color hue. But may be it is possible for brightness. This has to be tested. Object-to-Space-Relations and Attribute seem to be exchangeable terms."^^xsd:string ;
+      rdfs:label "GraphicRelation" ;
+      rdfs:subClassOf rdf:Property ;
+      dct:description "A relation between two graphic objects or an attribute that can be used to express something graphically. "^^xsd:string .
+              
               
 viso-graphic:Graphic_Multiple
       rdf:type owl:Class ;
@@ -161,10 +208,49 @@ viso-graphic:Jittering
       swstatus:term_status
               "stable"^^xsd:string .
               
+viso-graphic:Labeling_Relation
+      rdf:type owl:Class ;
+      rdfs:comment "There is also a simple binary version of this relation defined as a property. In contrast this n-ary version should allow the definition of a (prefrerred) attachment relation and relative position."^^xsd:string ;
+      rdfs:label "Labeling"^^xsd:string ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+      dct:description "Labeling can be used for attributes (simple datatypes), but also for relations to complex entities when the related entity shall not have its own full graphic representation. Instead a new graphic object, playing the role of a  label can be created, which represents the related entity, but only displays a small subset of the entities details, e.g. its name or the name and a thumbnail picture. "^^xsd:string ;
+      swstatus:term_status
+              "Not implemented, use binary version for now."^^xsd:string , "stable"^^xsd:string ;
+      .
+              
+viso-graphic:Legend
+      rdf:type owl:Class ;
+      rdfs:label "Legend" ;
+      rdfs:subClassOf viso-graphic:Legend_Object ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+              
 viso-graphic:Legend_Object
       rdf:type owl:Class ;
       rdfs:label "Legend Object" ;
       rdfs:subClassOf viso-graphic:Reference_Object .
+      
+viso-graphic:Link_Diagram
+      rdf:type owl:Class ;
+      rdfs:label "Link Diagram" ;
+      rdfs:subClassOf viso-graphic:Graphic_Representation ;
+      dct:description "A link diagram is a graphic representation in which the syntactic structure consists of linking. Syntactic structures that consist of linking can be divided into linear chains, circular chains, trees, and networks."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-graphic:Linking_Directed_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Directed Linking"^^xsd:string ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-graphic:Linking_Undirected_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Undirected Linking"^^xsd:string ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+      swstatus:term_status
+              "stable"^^xsd:string .
               
 viso-graphic:Path_Map
       rdf:type owl:Class ;
@@ -201,6 +287,14 @@ viso-graphic:Primary_Graphic_Representation
       swstatus:term_status
               "stable"^^xsd:string .
               
+viso-graphic:Pure_Link_Diagram
+      rdf:type owl:Class ;
+      rdfs:label "Link Diagram" ;
+      rdfs:subClassOf viso-graphic:Link_Diagram , viso-graphic:Primary_Graphic_Representation ;
+      dct:description "A link diagram is a graphic representation in which the syntactic structure consists of linking. Syntactic structures that consist of linking can be divided into linear chains, circular chains, trees, and networks."^^xsd:string ;
+      swstatus:term_status
+              "unstable"^^xsd:string .
+              
 viso-graphic:Scatter_Plot
       rdf:type owl:Class ;
       rdfs:label "Scatter Plot" ;
@@ -213,10 +307,9 @@ viso-graphic:Semantic_Zoom
       swstatus:term_status
               "stable"^^xsd:string .
               
-viso-graphic:Pure_Link_Diagram
+viso-graphic:Shape
       rdf:type owl:Class ;
-      rdfs:label "Link Diagram" ;
-      rdfs:subClassOf viso-graphic:Link_Diagram , viso-graphic:Primary_Graphic_Representation ;
-      dct:description "A link diagram is a graphic representation in which the syntactic structure consists of linking. Syntactic structures that consist of linking can be divided into linear chains, circular chains, trees, and networks."^^xsd:string ;
-      swstatus:term_status
-              "unstable"^^xsd:string .
+      rdfs:label "Shape" ;
+      rdfs:subClassOf viso-graphic:Spatial_Attribute ;
+      .
+              
