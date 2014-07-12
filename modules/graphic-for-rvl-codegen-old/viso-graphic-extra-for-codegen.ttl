@@ -25,3 +25,12 @@ viso-graphic:linking_connector
 # necessary?    
 #viso-data:has_numeral_value 
 #      rdfs:range xsd:float .
+
+## additions to VISO
+
+viso-graphic:labeling_position
+      rdf:type viso-graphic:N-AryRelationHelperProperty , owl:ObjectProperty ;
+      rdfs:domain viso-graphic:Labeling_Relation ;
+      rdfs:range rdfs:Resource ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties ;
+      dct:description "The position used to attach the label. Can be one of vg:TopRight, vg:CenterCenter, vg:BottomLeft ..."^^xsd:string .
