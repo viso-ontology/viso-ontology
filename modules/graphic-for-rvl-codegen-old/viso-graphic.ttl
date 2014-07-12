@@ -510,6 +510,14 @@ viso-graphic:Green
               "50"^^xsd:float ;
       viso-graphic:color_rgb
               "#00FF00"^^xsd:string .
+              
+viso-graphic:DarkGreen
+      rdf:type viso-graphic:Color ;
+      rdfs:label "Dark green"^^xsd:string ;
+      viso-graphic:color_hsl_lightness
+              "50"^^xsd:float ;
+      viso-graphic:color_rgb
+              "#00AA00"^^xsd:string .
 
 viso-graphic:Grey
       rdf:type viso-graphic:Color ;
@@ -1687,7 +1695,7 @@ viso-graphic:area
 
 viso-graphic:associative
       rdf:type owl:DatatypeProperty ;
-      rdfs:comment "N. Andrienko und G. Andrienko, â€œExploratory Analysis of Spatial and Temporal Data: A Systematic Approachâ€� (2005). p. 171"^^xsd:string ;
+      rdfs:comment "N. Andrienko und G. Andrienko, Exploratory Analysis of Spatial and Temporal Data: A Systematic Approach (2005). p. 171"^^xsd:string ;
       rdfs:domain viso-graphic:Visual_Attribute ;
       rdfs:range xsd:boolean .
 
@@ -2116,7 +2124,7 @@ viso-graphic:refers_to
 
 viso-graphic:selective
       rdf:type owl:DatatypeProperty ;
-      rdfs:comment "N. Andrienko und G. Andrienko, â€œExploratory Analysis of Spatial and Temporal Data: A Systematic Approachâ€� (2005). p. 171"^^xsd:string ;
+      rdfs:comment "N. Andrienko und G. Andrienko, Exploratory Analysis of Spatial and Temporal Data: A Systematic Approach (2005). p. 171"^^xsd:string ;
       rdfs:domain viso-graphic:Visual_Attribute ;
       rdfs:range xsd:boolean .
 
