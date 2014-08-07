@@ -28,12 +28,3 @@ viso-graphic:linking_connector
 
 viso-graphic:color_rgb 
 	rdfs:domain viso-graphic:Color, viso-graphic:Graphic_Object .
-
-## additions to VISO
-
-viso-graphic:labeling_position
-      rdf:type viso-graphic:N-AryRelationHelperProperty , owl:ObjectProperty ;
-      rdfs:domain viso-graphic:Labeling_Relation ;
-      rdfs:range rdfs:Resource ;
-      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties ;
-      dct:description "The position used to attach the label. Can be one of vg:TopRight, vg:CenterCenter, vg:BottomLeft ..."^^xsd:string .
