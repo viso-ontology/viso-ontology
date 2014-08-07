@@ -1,0 +1,26 @@
+viso-activity:Extraction_and_Comparison
+      rdf:type owl:Class ;
+      rdfs:label "Extraction and Comparison" ;
+      rdfs:subClassOf viso-activity:Interactive_Technique .
+              
+viso-activity:Geometric_Zoom
+      rdf:type owl:Class ;
+      rdfs:label "Geometric Zoom" ;
+      rdfs:subClassOf viso-activity:Interactive_Technique ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+              
+              
+viso-activity:Interactive_Technique
+      rdf:type owl:Class ;
+      rdfs:label "Interactive Technique" ;
+      rdfs:subClassOf viso-activity:Visualisation_Technique ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+              
+viso-activity:Semantic_Zoom
+      rdf:type owl:Class ;
+      rdfs:label "Semantic Zoom" ;
+      rdfs:subClassOf viso-activity:Interactive_Technique ;
+      swstatus:term_status
+              "stable"^^xsd:string .
