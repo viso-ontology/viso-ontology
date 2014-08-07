@@ -1,4 +1,4 @@
-viso-ontology
+viso-ontology (RVL branch)
 =============
 
-The current VISO Visualization Ontology. Statements from the legacy VISO ontology are moved here as needed by the VISO users. 
+The version of the VISO Visualization Ontology as used in RVL. Currently the old-version is still used fo code generation.
