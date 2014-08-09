@@ -1,3 +1,6 @@
+### WIP - COPYING STATEMENTS FROM THE LEGAY ONTOLOGY TO THIS MODULE HAS TO BE COMPLETED ###
+
+
 viso-activity:Extraction_and_Comparison
       rdf:type owl:Class ;
       rdfs:label "Extraction and Comparison" ;
