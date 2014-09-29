@@ -28,3 +28,10 @@ viso-graphic:linking_connector
 
 viso-graphic:color_rgb 
 	rdfs:domain viso-graphic:Color, viso-graphic:Graphic_Object .
+	
+viso-graphic:represents
+	a rdf:Property ;
+	dct:description  "Points to the represented domain resource, when the graphic object is used for visualisation." ;
+	rdfs:domain viso-graphic:Graphic_Object ;
+	rdfs:range rdfs:Resource ;
+	.
