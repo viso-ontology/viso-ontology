@@ -5,4 +5,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>VISO Ontology</name>
   <description>The Visualization Ontology (VISO)</description>
+  
+  	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>
