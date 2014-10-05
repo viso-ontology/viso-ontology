@@ -8,10 +8,10 @@
   
   	<build>
 		<resources>
-			<resource>
+			<!--<resource>
 				<directory>${basedir}</directory>
 				<filtering>false</filtering>
-			</resource>
+			</resource>-->
 		</resources>
 	</build>
 </project>
