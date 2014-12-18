@@ -635,6 +635,13 @@ viso-graphic:y_position
 ##### Individuals #######
 #########################
 
+viso-graphic:Black
+      rdf:type viso-graphic:Color ;
+      rdfs:label "Black"^^xsd:string ;
+      viso-graphic:color_hsl_lightness
+              "0"^^xsd:float ;
+      viso-graphic:color_rgb
+              "#000000"^^xsd:string .
 
 viso-graphic:Blue
       rdf:type viso-graphic:Color ;
@@ -726,4 +733,11 @@ viso-graphic:DarkRed
       viso-graphic:color_rgb
               "#FF00FF"^^xsd:string .
               
+viso-graphic:White
+      rdf:type viso-graphic:Color ;
+      rdfs:label "White"^^xsd:string ;
+      viso-graphic:color_hsl_lightness
+              "100"^^xsd:float ;
+      viso-graphic:color_rgb
+              "#FFFFFF"^^xsd:string .
             
