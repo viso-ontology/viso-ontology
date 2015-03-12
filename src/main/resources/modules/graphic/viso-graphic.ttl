@@ -323,6 +323,14 @@ viso-graphic:Superimposition_Relation
 #### PROPERTIES ####
 ####################
 
+viso-graphic:area
+      rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:domain viso-graphic:Graphic_Object ;
+      rdfs:label "area"^^xsd:string ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-data:has_quantitative_value , viso-graphic:has_spatial_graphic_attribute ;
+      swstatus:term_status 
+              "stable"^^xsd:string .
 
 viso-graphic:color_brightness_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
