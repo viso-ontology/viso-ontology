@@ -1,4 +1,4 @@
-@prefix :         <http://purl.org/viso/facts/> .
+@prefix :  <http://purl.org/viso/facts/> .
 @prefix viso-facts:  <http://purl.org/viso/facts/> .
 @prefix bibo:    <http://purl.org/ontology/bibo/> .
 @prefix bixt:    <http://purl.org/viso/bibo-extension/> .
@@ -20,7 +20,7 @@ viso-facts:
       rdfs:label "Facts module of the Visualisation Ontology (VISO)"@en , "Fakten-Modul der Visualiserungsontologie (VISO)"@de ;
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The facts module of VISO defines vocabulary for stating facts from (empiric) visualisation research. "^^xsd:string ;
-      owl:imports <http://purl.org/dc/elements/1.1/> , <http://purl.org/viso/anno/> , empiric: , viso-graphic: ;
+      owl:imports <http://purl.org/dc/elements/1.1/> , <http://purl.org/viso/anno/> , viso-graphic: ;
       owl:versionInfo "0.5"^^xsd:string ;
       skos:changeNote "Deleted \"offers_visual_value_set\", since this is does not fit the other terms and is not needed at the moment"^^xsd:string .
 
