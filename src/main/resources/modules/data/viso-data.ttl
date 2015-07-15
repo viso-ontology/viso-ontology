@@ -122,7 +122,7 @@ viso-data:Interval_Scale_of_Measurement
 
 viso-data:Linked_Data_Structure
       rdf:type owl:Class ;
-      rdfs:comment "We distinguish linked data structures from other structures such as tabular structures.";
+      dct:description "We distinguish linked data structures from other structures such as tabular structures.";
       rdfs:label "Linked Data Structure" ;
       rdfs:subClassOf viso-data:Data_Structure ;
       swstatus:term_status
@@ -277,17 +277,63 @@ viso-data:Variable_Role
       rdfs:label "Variable Role" ;
       rdfs:subClassOf viso-graphic:Role .
 
+viso-data:has_fractional_value
+      rdf:type owl:DatatypeProperty ;
+      dct:description "Assigns a ratio value between 0 and 1." ;
+      rdfs:seeAlso viso-data:has_ordinal_value ;
+      rdfs:subPropertyOf viso-data:has_ratio_value ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-data:has_interval_value
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      dct:description "Assigns an interval value." ;
+      rdfs:label "has interval value"^^xsd:string ;
+      rdfs:seeAlso viso-data:has_ordinal_value ;
+      rdfs:subPropertyOf viso-data:has_quantitative_value ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-data:has_nominal_value
+      rdf:type rdf:Property .
+
 viso-data:has_numeral_value
       rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
-      rdfs:comment "This property should be used to assign numeral values to individuals or strings that actually are nominal and thereby put them on an ordinal or quantitative scale.  The assignment of ordinal values is an alternative to placing the reources in an (ordered) list."^^xsd:string ;
+      rdfs:comment "This property should be used to assign numeral values to individuals or strings that actually are nominal and thereby put them on an ordinal or quantitative scale.  The assignment of ordinal values is an alternative to placing the resources in an (ordered) list."^^xsd:string ;
       rdfs:label "has numeral value"^^xsd:string ;
       swstatus:term_status
               "stable"^^xsd:string ;
       skos:example "Assign \"1\" to \"small\", \"2\" to \"medium\" and \"3\" to big. This creates an ordinal scale. By using subproperties, it can be further defined, if even more than an ordinal scale applies (interval, ratio)."^^xsd:string .
+
+viso-data:has_ordinal_value
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      dct:description """Assigns an ordinal value.
+
+Alternatively to the definition of a new order relation between ObjectProperty values and connecting them by this means, a numeral value can be attached, which is able to provide the ordinal information and additionally also quantitative (interval, ratio) information.""" ;
+      rdfs:label "has ordinal value"^^xsd:string ;
+      viso-data:has_scale_of_measurement
+              viso-data:Ordinal_Scale_of_Measurement ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-data:has_quantitative_value
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:label "has quantitative value"^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+viso-data:has_ratio_value
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      dct:description "Assigns a ratio value." ;
+      rdfs:label "has ratio value"^^xsd:string ;
+      rdfs:seeAlso viso-data:has_ordinal_value ;
+      rdfs:subPropertyOf viso-data:has_interval_value ;
+      swstatus:term_status
+              "stable"^^xsd:string .
               
 viso-data:heterogeneous
       rdf:type owl:DatatypeProperty ;
-      rdfs:comment "Heterogeneous means that various data structures and distributed sources may exist. The opposite is homegeneous."^^xsd:string ;
+      dct:description "Heterogeneous means that various data structures and distributed sources may exist. The opposite is homegeneous."^^xsd:string ;
       rdfs:domain viso-data:Data ;
       rdfs:range xsd:boolean .
 
@@ -304,7 +350,7 @@ viso-data:planar
 
 viso-data:sparse
       rdf:type owl:DatatypeProperty ;
-      rdfs:comment "A data set is sparse with respect to a type of relation if only a few items take part in relationships of that type. A data set could be called sparse in general when this is true for many of its relation types."^^xsd:string ;
+      dct:description "A data set is sparse with respect to a type of relation if only a few items take part in relationships of that type. A data set could be called sparse in general when this is true for many of its relation types."^^xsd:string ;
       rdfs:domain viso-data:Data , viso-data:Relation ;
       rdfs:range xsd:boolean ;
       swstatus:term_status
