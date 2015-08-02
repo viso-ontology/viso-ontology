@@ -276,6 +276,17 @@ viso-graphic:Pure_Link_Diagram
       swstatus:term_status
               "unstable"^^xsd:string .
               
+viso-graphic:Relativ_Distance_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Relativ Distance" ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+	  swstatus:term_status
+              "stable"^^xsd:string ;
+      dct:description <http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/vr_spatial_clustering.png> ;
+      skos:editorialNote "This was called Spatial Clustering in older VISO versions"^^xsd:string ;
+      .
+       
+              
 viso-graphic:Scatter_Plot
       rdf:type owl:Class ;
       rdfs:label "Scatter Plot" ;
@@ -559,6 +570,30 @@ viso-graphic:linking_node
       swstatus:term_status
               "stable"^^xsd:string .  
               
+viso-graphic:relatively_distant_object
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string . 
+
+viso-graphic:relative_distance_to
+      rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "relative distance to"^^xsd:string ;
+      rdfs:range viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to ;
+      dct:description "States the relative distance between two graphic objects in comparison to the default distance (1). (An n-ary relation pattern is used to model this)."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string , "unstable"^^xsd:string .             
+
+viso-graphic:relativeDistance_value
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:DatatypeProperty ;
+      rdfs:domain viso-graphic:Relativ_Distance ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string ;
+      .              
               
 viso-graphic:shape_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
