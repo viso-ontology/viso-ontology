@@ -276,9 +276,9 @@ viso-graphic:Pure_Link_Diagram
       swstatus:term_status
               "unstable"^^xsd:string .
               
-viso-graphic:Relativ_Distance_Relation
+viso-graphic:Relative_Distance_Relation
       rdf:type owl:Class ;
-      rdfs:label "Relativ Distance" ;
+      rdfs:label "Relative Distance" ;
       rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
 	  swstatus:term_status
               "stable"^^xsd:string ;
@@ -588,7 +588,7 @@ viso-graphic:relative_distance_to
 
 viso-graphic:relativeDistance_value
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:DatatypeProperty ;
-      rdfs:domain viso-graphic:Relativ_Distance ;
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
