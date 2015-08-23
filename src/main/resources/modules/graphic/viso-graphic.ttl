@@ -554,16 +554,15 @@ viso-graphic:linkingDirected_startNode
 viso-graphic:linking_connector
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
       rdfs:comment "Eventually, an extra role should be used for a directed connector to be used with Linking_Directed_Relation. However, the kind of connector can also be derived from context (e.g. existence of startNode, endNode or type of n-ary Relation)"^^xsd:string ;
-      rdfs:domain viso-graphic:Linking_Directed_Relation ;
       rdfs:range viso-graphic:Graphic_Object ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string ;
-      skos:editorialNote "TMPOFF: domain should be undirected or directed linking as well "^^xsd:string .
+      skos:editorialNote "TMPOFF: domain should be the union of undirected or directed linking. Until supported by the code generator, the domain is completely removed here and put to the extras for codegen."^^xsd:string .
 
 viso-graphic:linking_node
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
+#      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string .  
