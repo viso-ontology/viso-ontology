@@ -276,6 +276,17 @@ viso-graphic:Pure_Link_Diagram
       swstatus:term_status
               "unstable"^^xsd:string .
               
+viso-graphic:Relative_Distance_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Relative Distance" ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+	  swstatus:term_status
+              "stable"^^xsd:string ;
+      dct:description <http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/vr_spatial_clustering.png> ;
+      skos:editorialNote "This was called Spatial Clustering in older VISO versions"^^xsd:string ;
+      .
+       
+              
 viso-graphic:Scatter_Plot
       rdf:type owl:Class ;
       rdfs:label "Scatter Plot" ;
@@ -323,6 +334,14 @@ viso-graphic:Superimposition_Relation
 #### PROPERTIES ####
 ####################
 
+viso-graphic:area
+      rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:domain viso-graphic:Graphic_Object ;
+      rdfs:label "area"^^xsd:string ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-data:has_quantitative_value , viso-graphic:has_spatial_graphic_attribute ;
+      swstatus:term_status 
+              "stable"^^xsd:string .
 
 viso-graphic:color_brightness_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
@@ -412,13 +431,11 @@ viso-graphic:contained_by
 
 viso-graphic:containment_containee
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
-      skos:editorialNote "not used at the moment"^^xsd:string .
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:containment_container
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
-      skos:editorialNote "not used at the moment"^^xsd:string .
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:contains
       rdf:type viso-graphic:BinaryGraphicO2ORelation , viso-graphic:GraphicObjectToObjectRelation ;
@@ -537,20 +554,43 @@ viso-graphic:linkingDirected_startNode
 viso-graphic:linking_connector
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
       rdfs:comment "Eventually, an extra role should be used for a directed connector to be used with Linking_Directed_Relation. However, the kind of connector can also be derived from context (e.g. existence of startNode, endNode or type of n-ary Relation)"^^xsd:string ;
-      rdfs:domain viso-graphic:Linking_Directed_Relation ;
       rdfs:range viso-graphic:Graphic_Object ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string ;
-      skos:editorialNote "TMPOFF: domain should be undirected or directed linking as well "^^xsd:string .
+      skos:editorialNote "TMPOFF: domain should be the union of undirected or directed linking. Until supported by the code generator, the domain is completely removed here and put to the extras for codegen."^^xsd:string .
 
 viso-graphic:linking_node
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
+#      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string .  
               
+viso-graphic:relatively_distant_object
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string . 
+
+viso-graphic:relative_distance_to
+      rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "relative distance to"^^xsd:string ;
+      rdfs:range viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to ;
+      dct:description "States the relative distance between two graphic objects in comparison to the default distance (1). (An n-ary relation pattern is used to model this)."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string , "unstable"^^xsd:string .             
+
+viso-graphic:relativeDistance_value
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:DatatypeProperty ;
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string ;
+      .              
               
 viso-graphic:shape_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
