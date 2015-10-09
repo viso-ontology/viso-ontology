@@ -17,7 +17,7 @@ viso:
 
 <img title=\"VISO modules\" src=\"http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/viso-modules.png\"/>"""^^xsd:string ;
       owl:imports viso-data: , viso-facts: , viso-graphic: ;
-      owl:versionInfo "0.6"^^xsd:string .
+      owl:versionInfo "1.0"^^xsd:string .
 
 viso:FabianPrager
       rdf:type dct:Agent ;
