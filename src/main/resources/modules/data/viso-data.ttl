@@ -5,6 +5,8 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix swstatus:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix viso-anno:  <http://purl.org/viso/anno/> .
+@prefix viso-bibliography:  <http://purl.org/viso/bibliography/> .
 @prefix viso-data:  <http://purl.org/viso/data/> .
 @prefix viso-graphic:  <http://purl.org/viso/graphic/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
@@ -14,7 +16,9 @@ viso-data:
       rdfs:label "Data module of the Visualisation Ontology (VISO)"@en , "Datenmodul der Visualisierungsontologie (VISO)"@de ;
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The data module of VISO describes characteristics of data, as far as needed for visualization purposes."@en ;
-      owl:versionInfo "1.0"^^xsd:string .
+      owl:versionInfo "1.0"^^xsd:string ;
+      owl:imports viso-anno: , viso-bibliography: ;
+      .
 
 viso-data:Characteristic
       rdf:type owl:Class ;
@@ -225,11 +229,6 @@ viso-data:Structured_Data
       rdf:type owl:Class ;
       rdfs:label "Structured Data" ;
       rdfs:subClassOf viso-data:Data ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty viso-graphic:has ;
-                owl:someValuesFrom viso-data:Data_Structure
-              ] ;
       owl:disjointWith viso-data:Unstructured_Data .
 
 viso-data:Tabular_Data_Structure

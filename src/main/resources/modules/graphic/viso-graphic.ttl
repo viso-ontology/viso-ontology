@@ -14,6 +14,8 @@
 @prefix viso-data:  <http://purl.org/viso/data/> .
 @prefix viso-facts:  <http://purl.org/viso/facts/> .
 @prefix viso-graphic:  <http://purl.org/viso/graphic/> .
+@prefix viso-anno:  <http://purl.org/viso/anno/> .
+@prefix viso-bibliography:  <http://purl.org/viso/bibliography/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 viso-graphic:
@@ -23,6 +25,7 @@ viso-graphic:
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The graphic module of VISO defines concepts and relations from the field of graphics and visualisation."^^xsd:string ;
       owl:versionInfo "1.0"^^xsd:string ;
+      owl:imports viso-data: , viso-anno: , viso-bibliography: ;
       .
       
 viso-graphic:Bar_Chart
