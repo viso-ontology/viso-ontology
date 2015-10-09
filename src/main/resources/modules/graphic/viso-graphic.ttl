@@ -165,7 +165,7 @@ viso-graphic:Information_Landscape
       rdfs:subClassOf viso-graphic:Graphic_Representation .
       
       
-      viso-graphic:Intended_List
+viso-graphic:Indented_List
       rdf:type owl:Class ;
       rdfs:label "Intended List" ;
       rdfs:subClassOf viso-graphic:Primary_Graphic_Representation ;

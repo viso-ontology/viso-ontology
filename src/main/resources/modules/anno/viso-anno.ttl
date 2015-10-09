@@ -2793,7 +2793,7 @@ viso-graphic:Informational_Role
 viso-graphic:Integral_Metric_Space
       bixt:followsSource viso-anno:Quote_Engelhardt2002_35 , viso-anno:Quote_Engelhardt2002_36 .
 
-viso-graphic:Intended_List
+viso-graphic:Indented_List
       bixt:considersSource
               viso-anno:Quote_Katifori2007_1 .
 
