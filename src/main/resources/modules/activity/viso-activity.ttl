@@ -7,11 +7,19 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix swstatus:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix viso-anno:  <http://purl.org/viso/anno/> .
+@prefix viso-bibliography:  <http://purl.org/viso/bibliography/> .
 @prefix viso-data:  <http://purl.org/viso/data/> .
 @prefix viso-graphic:  <http://purl.org/viso/graphic/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-viso-activity: a owl:Ontology .
+viso-activity:
+      rdf:type owl:Ontology ;
+      rdfs:label "Activity module of the Visualisation Ontology (VISO)"@en , "Aktivitäts-Modul der Visualisierungsontologie (VISO)"@de ;
+      dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
+      dct:description "The activity module of VISO decribes tasks, actions an methods related to the visualisation process."@en ;
+      owl:imports viso-graphic: , viso-anno: , viso-bibliography: ;
+      owl:versionInfo "Work in Progress"^^xsd:string .
 
 ### WIP - COPYING STATEMENTS FROM THE LEGAY ONTOLOGY TO THIS MODULE HAS TO BE COMPLETED ###
 
