@@ -48,27 +48,23 @@ viso-data:Data
 viso-data:Data_Object
       rdf:type owl:Class ;
       rdfs:label "Data Object" ;
-      rdfs:subClassOf owl:Thing ;
       .
 
 viso-data:Data_Schema
       rdf:type owl:Class ;
       rdfs:label "Data Schema" ;
-      rdfs:subClassOf owl:Thing ;
       dct:description "Prescribes a data structure. Data schema is similar to data structure, however a data structure may exist without a schema that prescribes it."^^xsd:string .
 
 viso-data:Data_Structure
       rdf:type owl:Class ;
       rdfs:label "Data Structure" ;
       rdfs:seeAlso "Data Model"^^xsd:string ;
-      rdfs:subClassOf owl:Thing ;
       swstatus:term_status
               "stable"^^xsd:string .
 
 viso-data:Data_Variable
       rdf:type owl:Class ;
       rdfs:label "Data Variable" ;
-      rdfs:subClassOf owl:Thing ;
       dct:description "In contrast to a relation that may exist also without measuring something, a data variable stands for a variable in a measurement."^^xsd:string .
 
 viso-data:Dependent_Variable
@@ -95,7 +91,6 @@ viso-data:Discrete_Variable
 viso-data:Domain
       rdf:type owl:Class ;
       rdfs:label "Domain" ;
-      rdfs:subClassOf owl:Thing ;
       dct:description "A topic area of real life."^^xsd:string .
 
 viso-data:Geographical_Data
@@ -179,7 +174,7 @@ viso-data:Physical_Data
       rdf:type owl:Class ;
       rdfs:label "Physical Data" ;
       rdfs:subClassOf viso-data:Data ;
-      owl:disjointWith viso-data:Semantic_Data ;
+      #owl:disjointWith viso-data:Semantic_Data ;
       swstatus:term_status
               "stable"^^xsd:string .
 
@@ -215,8 +210,13 @@ viso-data:Reference
 viso-data:Relation
       rdf:type owl:Class ;
       rdfs:label "Relation" ;
-      rdfs:subClassOf owl:Thing ;
       .
+      
+viso-data:Scale_of_Measurement
+      rdf:type owl:Class ;
+      rdfs:label "Scale of Measurement" ;
+      swstatus:term_status
+              "stable"^^xsd:string .
 
 viso-data:Spatial_Data
       rdf:type owl:Class ;
@@ -268,8 +268,7 @@ viso-data:Unstructured_Data
 
 viso-data:Value_Role
       rdf:type owl:Class ;
-      rdfs:label "Value Role" ;
-      rdfs:subClassOf owl:Thing .
+      rdfs:label "Value Role" .
 
 viso-data:Variable_Role
       rdf:type owl:Class ;
@@ -278,6 +277,7 @@ viso-data:Variable_Role
 
 viso-data:has_fractional_value
       rdf:type owl:DatatypeProperty ;
+      rdfs:label "has fractional value"^^xsd:string ;
       dct:description "Assigns a ratio value between 0 and 1." ;
       rdfs:seeAlso viso-data:has_ordinal_value ;
       rdfs:subPropertyOf viso-data:has_ratio_value ;
@@ -332,23 +332,27 @@ viso-data:has_ratio_value
               
 viso-data:heterogeneous
       rdf:type owl:DatatypeProperty ;
+      rdfs:label "heterogeneous"^^xsd:string ;
       dct:description "Heterogeneous means that various data structures and distributed sources may exist. The opposite is homegeneous."^^xsd:string ;
       rdfs:domain viso-data:Data ;
       rdfs:range xsd:boolean .
 
 viso-data:is_weighted
       rdf:type owl:DatatypeProperty ;
+      rdfs:label "weighted"^^xsd:string ;
       rdfs:domain viso-data:Relation ;
       rdfs:range xsd:boolean .
       
 viso-data:planar
       rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:label "planar"^^xsd:string ;
       rdfs:range xsd:boolean ;
       swstatus:term_status
               "stable"^^xsd:string .
 
 viso-data:sparse
       rdf:type owl:DatatypeProperty ;
+      rdfs:label "sparse"^^xsd:string ;
       dct:description "A data set is sparse with respect to a type of relation if only a few items take part in relationships of that type. A data set could be called sparse in general when this is true for many of its relation types."^^xsd:string ;
       rdfs:domain viso-data:Data , viso-data:Relation ;
       rdfs:range xsd:boolean ;
