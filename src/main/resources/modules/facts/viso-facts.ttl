@@ -26,27 +26,28 @@ viso-facts:
       skos:changeNote "Deleted \"offers_visual_value_set\", since this is does not fit the other terms and is not needed at the moment"^^xsd:string .
 
 viso-facts:Appropriateness
-      rdf:type viso-facts:Graphic_Design_Criteria , owl:NamedIndividual , owl:Thing ;
+      rdf:type viso-facts:Graphic_Design_Criterion , owl:NamedIndividual , owl:Thing ;
       dct:description "A criteria to judge visualizations. Tradeoff between efforts required for creating a visualization and the benefits. It is used in the visualisation model of Van Wijk and calculates the total costs and overall profit of a visualisation."^^xsd:string ;
       swstatus:term_status
               "stable"^^xsd:string ;
       skos:related viso-facts:appropriate_to_visualize .
 
 viso-facts:Effectiveness
-      rdf:type viso-facts:Graphic_Design_Criteria , owl:NamedIndividual , owl:Thing ;
+      rdf:type viso-facts:Graphic_Design_Criterion , owl:NamedIndividual , owl:Thing ;
       swstatus:term_status
               "stable"^^xsd:string ;
       skos:related viso-facts:has_effectiveness_ranking_value .
 
 viso-facts:Expressiveness
-      rdf:type viso-facts:Graphic_Design_Criteria , owl:NamedIndividual , owl:Thing ;
+      rdf:type viso-facts:Graphic_Design_Criterion , owl:NamedIndividual , owl:Thing ;
       dct:description "Expressiveness criteria identify graphical languages that express the desired information."^^xsd:string ;
       swstatus:term_status
               "stable"^^xsd:string ;
       skos:related viso-facts:expresses .
 
-viso-facts:Graphic_Design_Criteria
+viso-facts:Graphic_Design_Criterion
       rdf:type owl:Class ;
+      rdfs:label "Graphic Design Criterion"@en ;
       rdfs:subClassOf viso-graphic:Graphic_Thing ;
       dct:description "Rankings can be done for graphic design criteria such as effectiveness and expressiveness."^^xsd:string ;
       swstatus:term_status

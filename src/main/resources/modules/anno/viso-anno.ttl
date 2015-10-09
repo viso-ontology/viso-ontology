@@ -2627,7 +2627,7 @@ viso-facts:Expressiveness
       bixt:followsSource viso-anno:Quote_Mackinlay1986_1 , viso-anno:Quote_Mackinlay1986_2 ;
       skos:editorialNote "Check if description not original quote."^^xsd:string .
 
-viso-facts:Graphic_Design_Criteria
+viso-facts:Graphic_Design_Criterion
       bixt:followsSource viso-anno:Quote_8 .
 
 viso-graphic:Anchoring
