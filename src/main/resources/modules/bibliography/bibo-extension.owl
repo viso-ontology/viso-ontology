@@ -16,8 +16,8 @@
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >0.5</owl:versionInfo>
     <dct:description xml:lang="en">Extension of the BIBO vocabulary, to allow for annotating ontological resources with literature references (modeled in BIBO)</dct:description>
-    <!--<owl:imports rdf:resource="http://purl.org/ontology/bibo/"/>-->
-	<owl:imports rdf:resource="http://localhost/ontology/viso/bibliography/bibo-latest.owl"/>
+    <owl:imports rdf:resource="http://purl.org/ontology/bibo/"/>
+	<!--<owl:imports rdf:resource="http://localhost/ontology/viso/bibliography/bibo-latest.owl"/>-->
     <rdfs:label xml:lang="de">BIBO-Erweiterungsvokabular</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:about="http://purl.org/ontology/bibo/Quote"/>
