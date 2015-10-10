@@ -1143,7 +1143,7 @@
 
 viso-bibliography:
       rdf:type owl:Ontology ;
-      rdfs:label "Bibliographie-Modul der Visualisierungsontologie (VISO)."@de , "Bibliography module of the Visualisation Ontology (VISO)."@en ;
+      rdfs:label "Bibliographie-Modul der Visualisierungsontologie (VISO)"@de , "Bibliography module of the Visualisation Ontology (VISO)"@en ;
       dct:creator <http://purl.org/viso/FabianPrager> , <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The bibliographic module of VISO stores documents and authors related to  the field of visualisation that have been referenced within the quotes we stored in the annotation module in order to document the literature the ontology terms we defined are based on."^^xsd:string ;
       #owl:imports <http://localhost/ontology/viso/bibliography/bibo-latest.owl> ;
