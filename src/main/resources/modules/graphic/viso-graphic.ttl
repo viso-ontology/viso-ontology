@@ -14,6 +14,8 @@
 @prefix viso-data:  <http://purl.org/viso/data/> .
 @prefix viso-facts:  <http://purl.org/viso/facts/> .
 @prefix viso-graphic:  <http://purl.org/viso/graphic/> .
+@prefix viso-anno:  <http://purl.org/viso/anno/> .
+@prefix viso-bibliography:  <http://purl.org/viso/bibliography/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 viso-graphic:
@@ -23,6 +25,7 @@ viso-graphic:
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The graphic module of VISO defines concepts and relations from the field of graphics and visualisation."^^xsd:string ;
       owl:versionInfo "1.0"^^xsd:string ;
+      owl:imports viso-data: , viso-anno: , viso-bibliography: ;
       .
       
 viso-graphic:Bar_Chart
@@ -162,9 +165,9 @@ viso-graphic:Information_Landscape
       rdfs:subClassOf viso-graphic:Graphic_Representation .
       
       
-      viso-graphic:Intended_List
+viso-graphic:Indented_List
       rdf:type owl:Class ;
-      rdfs:label "Intended List" ;
+      rdfs:label "Indented List" ;
       rdfs:subClassOf viso-graphic:Primary_Graphic_Representation ;
       dct:description "Tree visualization like in file browser"^^xsd:string ;
       swstatus:term_status
@@ -276,6 +279,17 @@ viso-graphic:Pure_Link_Diagram
       swstatus:term_status
               "unstable"^^xsd:string .
               
+viso-graphic:Relative_Distance_Relation
+      rdf:type owl:Class ;
+      rdfs:label "Relative Distance" ;
+      rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
+	  swstatus:term_status
+              "stable"^^xsd:string ;
+      dct:description <http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/vr_spatial_clustering.png> ;
+      skos:editorialNote "This was called Spatial Clustering in older VISO versions"^^xsd:string ;
+      .
+       
+              
 viso-graphic:Scatter_Plot
       rdf:type owl:Class ;
       rdfs:label "Scatter Plot" ;
@@ -323,16 +337,25 @@ viso-graphic:Superimposition_Relation
 #### PROPERTIES ####
 ####################
 
+viso-graphic:area
+      rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:domain viso-graphic:Graphic_Object ;
+      rdfs:label "area"^^xsd:string ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-data:has_quantitative_value , viso-graphic:has_spatial_graphic_attribute ;
+      swstatus:term_status 
+              "stable"^^xsd:string .
 
 viso-graphic:color_brightness_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
       rdfs:domain viso-graphic:Graphic_Object ;
-      rdfs:label "Color brightness named"^^xsd:string ;
+      rdfs:label "color brightness named"^^xsd:string ;
       rdfs:range viso-graphic:Brightness ;
       rdfs:subPropertyOf viso-data:has_ordinal_value , viso-graphic:has_non-spatial_graphic_attribute .
 
 viso-graphic:color_hsl_hue
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "color HSL hue"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute ;
       swstatus:term_status
@@ -340,6 +363,7 @@ viso-graphic:color_hsl_hue
 
 viso-graphic:color_hsl_lightness
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "color HSL lightness"^^xsd:string ;
       rdfs:domain
               [ rdf:type owl:Class ;
                 owl:unionOf (viso-graphic:Brightness viso-graphic:Color viso-graphic:Graphic_Object)
@@ -351,6 +375,7 @@ viso-graphic:color_hsl_lightness
 
 viso-graphic:color_hsl_saturation
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "color HSL saturation"^^xsd:string ;
       rdfs:domain
               [ rdf:type owl:Class ;
                 owl:unionOf (viso-graphic:Saturation viso-graphic:Color viso-graphic:Graphic_Object)
@@ -363,7 +388,7 @@ viso-graphic:color_hsl_saturation
 viso-graphic:color_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
       rdfs:domain viso-graphic:Graphic_Object ;
-      rdfs:label "Color named"^^xsd:string ;
+      rdfs:label "color named"^^xsd:string ;
       rdfs:range viso-graphic:Color ;
       rdfs:subPropertyOf viso-data:has_nominal_value , viso-graphic:has_non-spatial_graphic_attribute .
 
@@ -379,21 +404,21 @@ viso-graphic:color_rgb
 
 viso-graphic:color_rgb_b
       rdf:type owl:DatatypeProperty ;
-      rdfs:label "Color RGB Blue"^^xsd:string ;
+      rdfs:label "color RGB Blue"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-data:has_quantitative_value ;
       skos:related viso-graphic:color_rgb .
 
 viso-graphic:color_rgb_g
       rdf:type owl:DatatypeProperty ;
-      rdfs:label "Color RGB Green"^^xsd:string ;
+      rdfs:label "color RGB Green"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-data:has_quantitative_value ;
       skos:related viso-graphic:color_rgb .
 
 viso-graphic:color_rgb_r
       rdf:type owl:DatatypeProperty ;
-      rdfs:label "Color RGB Red"^^xsd:string ;
+      rdfs:label "color RGB Red"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-data:has_quantitative_value ;
       skos:related viso-graphic:color_rgb .
@@ -401,27 +426,29 @@ viso-graphic:color_rgb_r
 viso-graphic:color_saturation_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
       rdfs:domain viso-graphic:Graphic_Object ;
-      rdfs:label "Color saturation named"^^xsd:string ;
+      rdfs:label "color saturation named"^^xsd:string ;
       rdfs:range viso-graphic:Saturation ;
       rdfs:subPropertyOf viso-data:has_ordinal_value , viso-graphic:has_non-spatial_graphic_attribute .
       
 
 viso-graphic:contained_by
       rdf:type viso-graphic:BinaryGraphicO2ORelation , viso-graphic:GraphicObjectToObjectRelation ;
+      rdfs:label "contained by"@en; 
       rdfs:subPropertyOf viso-graphic:has_binary_graphic_o_2_o_relation_to .
 
 viso-graphic:containment_containee
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
-      skos:editorialNote "not used at the moment"^^xsd:string .
+      rdfs:label "containment containee"@en; 
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:containment_container
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
-      skos:editorialNote "not used at the moment"^^xsd:string .
+      rdfs:label "containment container"@en; 
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:contains
       rdf:type viso-graphic:BinaryGraphicO2ORelation , viso-graphic:GraphicObjectToObjectRelation ;
+      rdfs:label "contains"@en; 
       rdfs:domain viso-graphic:Graphic_Object ;
       rdfs:range viso-graphic:Graphic_Object ;
       rdfs:subPropertyOf viso-graphic:has_binary_graphic_o_2_o_relation_to ;
@@ -447,6 +474,7 @@ viso-graphic:labeled_with
 
 viso-graphic:labeling_attachedBy
       rdf:type viso-graphic:N-AryRelationHelperProperty , owl:ObjectProperty ;
+      rdfs:label "labeling attached by"@en; 
       rdfs:domain viso-graphic:Labeling_Relation ;
       rdfs:range viso-graphic:GraphicObjectToObjectRelation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties ;
@@ -454,18 +482,21 @@ viso-graphic:labeling_attachedBy
 
 viso-graphic:labeling_base
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+      rdfs:label "labeling base"@en; 
       rdfs:domain viso-graphic:Labeling_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       dct:description "The labeled object."^^xsd:string .
 
 viso-graphic:labeling_label
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+      rdfs:label "labeling label"@en; 
       rdfs:domain viso-graphic:Labeling_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       dct:description "The object used as a label."^^xsd:string .
 
 viso-graphic:labeling_position
       rdf:type viso-graphic:N-AryRelationHelperProperty , owl:ObjectProperty ;
+      rdfs:label "labeling position"@en; 
       rdfs:domain viso-graphic:Labeling_Relation ;
       rdfs:range rdfs:Resource ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties ;
@@ -481,6 +512,7 @@ viso-graphic:labels
               
  viso-graphic:x_position
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "x-position"@en; 
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:position ;
       swstatus:term_status
@@ -488,6 +520,7 @@ viso-graphic:labels
 
 viso-graphic:y_position
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "y-position"@en; 
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:position ;
       swstatus:term_status
@@ -496,6 +529,7 @@ viso-graphic:y_position
               
  viso-graphic:linked_from
       rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "linked from"@en; 
       rdfs:range viso-graphic:Linking_Directed_Relation ;
       rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to ;
       swstatus:term_status
@@ -503,6 +537,7 @@ viso-graphic:y_position
 
 viso-graphic:linked_to
       rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "linked to"@en; 
       rdfs:range viso-graphic:Linking_Directed_Relation ;
       rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to ;
       dct:description "Links one graphic object to another using a directed connector. (An n-ary relation pattern is used to model this)."^^xsd:string ;
@@ -536,64 +571,97 @@ viso-graphic:linkingDirected_startNode
 
 viso-graphic:linking_connector
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+      rdfs:label "linking connector"@en; 
       rdfs:comment "Eventually, an extra role should be used for a directed connector to be used with Linking_Directed_Relation. However, the kind of connector can also be derived from context (e.g. existence of startNode, endNode or type of n-ary Relation)"^^xsd:string ;
-      rdfs:domain viso-graphic:Linking_Directed_Relation ;
       rdfs:range viso-graphic:Graphic_Object ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string ;
-      skos:editorialNote "TMPOFF: domain should be undirected or directed linking as well "^^xsd:string .
+      skos:editorialNote "TMPOFF: domain should be the union of undirected or directed linking. Until supported by the code generator, the domain is completely removed here and put to the extras for codegen."^^xsd:string .
 
 viso-graphic:linking_node
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
-      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
+      rdfs:label "linking node"@en; 
+#      rdfs:domain viso-graphic:Linking_Undirected_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
       swstatus:term_status
               "stable"^^xsd:string .  
               
+viso-graphic:relatively_distant_object
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:ObjectProperty ;
+	  rdfs:label "relatively distant object"@en; 
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string . 
+
+viso-graphic:relative_distance_to
+      rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "relative distance to"^^xsd:string ;
+      rdfs:range viso-graphic:Relative_Distance_Relation ;
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to ;
+      dct:description "States the relative distance between two graphic objects in comparison to the default distance (1). (An n-ary relation pattern is used to model this)."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string , "unstable"^^xsd:string .             
+
+viso-graphic:relativeDistance_value
+      rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:DatatypeProperty ;
+      rdfs:label "relative distance value"@en; 
+      rdfs:domain viso-graphic:Relative_Distance_Relation ;
+      rdfs:range xsd:float ;
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles ;
+      swstatus:term_status
+              "stable"^^xsd:string ;
+      .              
               
 viso-graphic:shape_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
       rdfs:domain viso-graphic:Graphic_Object ;
-      rdfs:label "Shape named"^^xsd:string ;
+      rdfs:label "shape named"^^xsd:string ;
       rdfs:range viso-graphic:Shape ;
       rdfs:subPropertyOf viso-data:has_nominal_value , viso-graphic:has_spatial_graphic_attribute .
 
 viso-graphic:size_named
       rdf:type viso-graphic:GraphicAttributeDiscrete ;
       rdfs:domain viso-graphic:Graphic_Object ;
-      rdfs:label "Size named"^^xsd:string ;
+      rdfs:label "size named"^^xsd:string ;
       rdfs:range viso-graphic:Size ;
       rdfs:subPropertyOf viso-data:has_ordinal_value , viso-graphic:has_spatial_graphic_attribute .
               
               
 viso-graphic:superimposed_by
       rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "superimposed by"@en; 
       rdfs:range viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
 
 viso-graphic:superimposes
       rdf:type viso-graphic:N-AryGraphicO2ORelation ;
+      rdfs:label "superimposes"@en; 
       rdfs:range viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
 
 viso-graphic:superimposition_byPercent
       rdf:type viso-graphic:N-AryRelationHelperProperty , rdf:Property , owl:FunctionalProperty ;
+      rdfs:label "superimposition by percent"@en; 
       rdfs:domain viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
 
 viso-graphic:superimposition_overlappingPart
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , owl:FunctionalProperty ;
+      rdfs:label "superimposition overlapping part"@en ;
       rdfs:domain viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:superimposition_superimposee
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , rdf:Property , owl:FunctionalProperty ;
+      rdfs:label "superimposition superimposee"@en; 
       rdfs:domain viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
 
 viso-graphic:superimposition_superimposer
       rdf:type viso-graphic:N-AryRelationHelperProperty , viso-graphic:SyntacticRole , rdf:Property , owl:FunctionalProperty ;
+      rdfs:label "superimposition superimposer"@en; 
       rdfs:domain viso-graphic:Superimposition_Relation ;
       rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .        
       
@@ -618,6 +686,7 @@ viso-graphic:width
               
 viso-graphic:x_position
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "x-position"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:position ;
       swstatus:term_status
@@ -625,6 +694,7 @@ viso-graphic:x_position
 
 viso-graphic:y_position
       rdf:type viso-graphic:GraphicAttributeContinuous , owl:DatatypeProperty ;
+      rdfs:label "y-position"^^xsd:string ;
       rdfs:range xsd:float ;
       rdfs:subPropertyOf viso-graphic:position ;
       swstatus:term_status

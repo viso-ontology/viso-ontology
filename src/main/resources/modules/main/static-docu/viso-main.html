@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:bixt="http://purl.org/viso/bibo-extension/"
+      xmlns:bibo="http://purl.org/ontology/bibo/"
+      xmlns:foaf="http://xmlns.com/foaf/spec/"
+      xmlns:swstatus="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+      xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Visualisation Ontology (VISO)</title>
+ 	  <link href="http://localhost/lode/owl.css" rel="stylesheet" type="text/css" />
+      <link href="http://localhost/lode/Primer.css" rel="stylesheet"
+            type="text/css" />
+      <link href="http://localhost/lode/rec.css" rel="stylesheet" type="text/css" />
+      <link href="http://localhost/lode/extra.css" rel="stylesheet" type="text/css" />
+      <link href="http://localhost/lode/viso.lode.css" rel="stylesheet"
+            type="text/css" />
+      <link rel="shortcut icon" href="http://localhost/lode/favicon.ico" />
+      <link rel="icon" href="http://localhost/lode/favicon.ico"
+            sizes="16x16 24x24 32x32 48x48 64x64 110x110 114x114"
+            type="image/vnd.microsoft.icon" /><script src="http://localhost/lode/jquery.js" type="text/javascript"></script><script src="http://localhost/lode/jquery.scrollTo.js" type="text/javascript"></script><script>
+                $(document).ready(
+                    function () {
+                        var list = $('a[name="http://purl.org/viso/main/"]');
+                        if (list.size() != 0) {
+                        	var element = list.first();
+                        	$.scrollTo(element);
+                        }
+                    });
+        </script></head>
+   <body>
+      <div class="head">
+         <h1>Visualisation Ontology (VISO)</h1>
+         <dl>
+            <dt>Current version:</dt>
+            <dd>1.0</dd>
+         </dl>
+         <dl>
+            <dt>Authors:</dt>
+            <dd><a href="http://purl.org/viso/JanPolowinski">http://purl.org/viso/JanPolowinski</a></dd>
+            <dd><a href="http://purl.org/viso/MartinVoigt">http://purl.org/viso/MartinVoigt</a></dd>
+            <dd><a href="http://purl.org/viso/FabianPrager">http://purl.org/viso/FabianPrager</a></dd>
+            <dt>Contact:</dt>
+            <dd>jan.polowinski at tu-dresden.de</dd>
+         </dl>
+         <dl id="imports">
+            <dt>Imported Ontologies:</dt>
+            <dd><a href="http://purl.org/viso/graphic/">http://purl.org/viso/graphic/</a></dd>
+            <dd><a href="http://purl.org/viso/data/">http://purl.org/viso/data/</a></dd>
+            <dd><a href="http://purl.org/viso/facts/">http://purl.org/viso/facts/</a></dd>
+            <dd><a href="http://purl.org/viso/facts/empiric/">http://purl.org/viso/facts/empiric/</a></dd>
+            <dd><a href="http://purl.org/viso/activity/">http://purl.org/viso/activity/</a></dd>
+            <dd><a href="http://purl.org/viso/anno/">http://purl.org/viso/anno/</a></dd>
+            <dd><a href="http://purl.org/viso/bibliography/">http://purl.org/viso/bibliography/</a></dd>
+         </dl>
+         <dl>
+            <dt>Download / Source view:</dt>
+            <dd><a title="Try right-clicking + save as .."
+                  href="http://localhost/lode/source?url=http://purl.org/viso/"> View the source of the main VISO ontology (linking the VISO-modules)</a>
+            </dd>
+            <dd>
+            	<a href="http://github.com/viso-ontology/viso-ontology/wiki/Download" title="Download the VISO Ontologies from GitHub ...">
+                 Download</a>
+            </dd>
+         </dl>
+         <br />
+         <!--dl>
+            <dt>Other visualisation:</dt>
+            <dd><a href="http://localhost/lode/source?url=http://purl.org/viso/main/">Ontology source</a></dd>
+            <dd><a href="http://owl.cs.manchester.ac.uk/browser/ontologies/?action=load&amp;clear=true&amp;uri=http://purl.org/viso/main/"
+                  title="Open this ontology using the Machester Ontology Browser">
+                  Machester Ontology Browser
+                  </a></dd>
+         </dl-->
+      </div>
+      <hr />
+      <div id="toc">
+         <h2>Table of Content</h2>
+         <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+            <li><a href="#usecases">VISO Use Cases</a></li>
+            <li><a href="#quotations">Annotating VISO Concepts with Quotations and Literature References</a></li>
+         </ol>
+      </div>
+      <h2 id="introduction">Introduction</h2>
+      <p>The Visualisation Ontology (VISO) defines concepts and relations from the field of
+         graphics and visualisation. The ontology is split into seven main modules, each being
+         concerned with a specific field of visualisation. These modules include the graphic
+         module, the data module and the facts module and other modules such as activities
+         and system context modules*.  
+      </p>	  
+	  <!--<p>At the bottom of each resource you will find a link to discuss it in the VISO 
+	  <a href="http://141.76.68.42/question2answer/">Question and Answers forum</a>.</p>-->
+	  More on VISO can be found in the   
+      <a href="https://github.com/viso-ontology/viso-ontology/wiki" title="The VISO-Wiki on GitHub ...">Wiki</a> and our 
+	  <a href="http://www-st.inf.tu-dresden.de/smtvis/blog/?cat=3"> Blog</a>.
+      <p><img title="VISO modules" src="http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/viso-modules.png"/></p>
+	  
+	  <p style="color:grey">*) The context module VISO/user and the module VISO/domain are partly implemented and not published for now.</p>
+	<h2 id="usecases">VISO Use cases</h2>
+	<p>VISO has been developed as a base for the <a href="http://purl.org/rvl/">RDFS/OWL Visualisation Language</a> (RVL) and VizBoard - a generic InfoVis workbench for semantic data. However, VISO could also be employed for other purposes in future:</p>
+	<ul>
+		<li>Classifying visualization components, languages, tools ..</li>
+		<li>Classifying visualization literature</li>
+		<li>Offering formal, sharable concepts and knowledge for (semi-)automatic 
+		visualization systems (that's how we use it). Since VISO is based on Semantic Web 
+		standards, by using VISO, interoperability with other 
+		systems is improved. For example, other systems may reuse the knowledge formalised in VISO.</li>
+		<li>Consolidating terms used in the field of visualisation by clarifying synonyms, 
+		homonyms and term overlap.</li>
+	</ul>
+	
+	<h2 id="download">Downloading and Using VISO</h2>
+		<p>Pointing your web browser to VISO (modules) should show you a documentation like this. Tools such as Protégé and TopBraid Composer will instead
+		download the actual ontology files from the same URI, so it should usually be sufficient to point these tools to the VISO main module 
+		(http://purl.org/viso/) or one of the other modules listed <a href="#imports">above</a>. Unfortunately, right-clicking the links and choosing 
+		"save as ..." does not seem to work in all browsers, but you should be able to display the ontology's source code by clicking on "Ontology source code" in the page header. 
+		 If you want to use VISO, <a href="http://github.com/viso-ontology/viso-ontology/wiki/Download" title="Download the VISO Ontologies from GitHub ...">
+                 download</a> it from our GitHub repository and contact us directly (jan.polowinski at tu-dresden.de) if you experience any trouble.
+		</p>
+	
+		
+	<h2 id="quotations">Annotating VISO Concepts with Quotations and Literature References</h2>
+	  <p>Allmost every term in VISO is explicitly related to the existing visualisation
+	   literature via a reference to a document, sometimes also quoting the
+	    exact phrase where it is mentioned. In order to make these
+		 <a title="VISO/anno module" href="http://purl.org/viso/anno/">annotations</a> and the 
+		<a title="VISO/bibliography module" href="http://purl.org/viso/bibliography/">bibliography</a> searchable via 
+		SPARQL, they are stored in RDF as well, based 
+		on the <a title="The Bibliographic Ontology (BIBO)" 
+		href="http://purl.org/ontology/bibo/">BIBO</a> vocabulary and a small extension vocabulary, 
+		<a title="BIBO-Extension vocabulary" href="http://purl.org/viso/bibo-extension/">BIBO-Extension</a> that we
+		 created for annotating ontology concepts with BIBO quotations.
+		In summary these ontologies are:</p>
+		<ul>
+			<li><a title="The Bibliographic Ontology (BIBO)" href="http://purl.org/ontology/bibo/">http://purl.org/ontology/bibo/</a></li>
+			<li><a title="BIBO-Extension" href="http://purl.org/viso/bibo-extension/">http://purl.org/viso/bibo-extension/</a></li>
+			<li><a title="VISO/bibliography module" href="http://purl.org/viso/bibliography/">http://purl.org/viso/bibliography/</a></li>
+			<li><a title="VISO/anno module" href="http://purl.org/viso/anno/">http://purl.org/viso/anno/</a></li>
+		</ul>
+	  
+      <div id="namespacedeclarations">
+         <h2>Namespace Declarations</h2>
+         <dl>
+            <dt>dct</dt>
+            <dd>http://purl.org/dc/terms/</dd>
+            <dt>owl</dt>
+            <dd>http://www.w3.org/2002/07/owl#</dd>
+            <dt>rdf</dt>
+            <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+            <dt>rdfs</dt>
+            <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+            <dt>viso</dt>
+            <dd>http://purl.org/viso/</dd>
+            <dt>viso-data</dt>
+            <dd>http://purl.org/viso/data/</dd>
+            <dt>viso-facts</dt>
+            <dd>http://purl.org/viso/facts/</dd>
+            <dt>viso-graphic</dt>
+            <dd>http://purl.org/viso/graphic/</dd>
+            <dt>viso-system</dt>
+            <dd>http://purl.org/viso/system/</dd>
+            <dt>xsd</dt>
+            <dd>http://www.w3.org/2001/XMLSchema#</dd>
+         </dl>
+      </div>
+	  <p class="endnote">
+	  Work on this project received financial support from the European Union and the 
+	  Free State of Saxony.<br/><img alt="Logo of the sponsors" src="http://localhost/lode/sponsoren-logos.png"/></p>
+      <p class="endnote">This HTML document was obtained by processing the OWL 
+	  ontology source code through <a href="http://lode.sourceforge.net">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://palindrom.es/phd/whoami/">Silvio Peroni</a>.
+      </p>
+   </body>
+</html>
