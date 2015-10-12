@@ -332,7 +332,14 @@ viso-graphic:Superimposition_Relation
               "stable"^^xsd:string ;
       skos:editorialNote "Trial to allow n-ary relations at the example of superimposition. X superimposes Y by Z percent."^^xsd:string .
       
-      
+viso-graphic:Visual_Value_List
+	  rdfs:label "Visual Value List"@en ;
+	  a rdfs:Class ;
+#	  a owl:Class ; 
+	  swstatus:term_status
+              "stable"^^xsd:string ;
+      rdfs:subClassOf rdf:List .
+            
 ####################
 #### PROPERTIES ####
 ####################
@@ -810,4 +817,3 @@ viso-graphic:White
               "100"^^xsd:float ;
       viso-graphic:color_rgb
               "#FFFFFF"^^xsd:string .
-            
