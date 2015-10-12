@@ -1274,12 +1274,10 @@ viso-bibliography:Article1
 
 viso-bibliography:Article2
       rdf:type bibo:Article ;
-      rdfs:comment """{{{\\textless}p{\\textgreater}Achtung:} {PDF} ist {2007-Ausgabe,} wurde aber nahzu unverändert, bis auf seiten zahlen.{\\textless}/p{\\textgreater}
-{\\textless}p{\\textgreater} {\\textless}/p{\\textgreater}
-{\\textless}p{\\textgreater}p. 526: Filtering Widgets as Visualizations (controls consume space that is valuable){\\textless}/p{\\textgreater}
-{\\textless}p{\\textgreater} {\\textless}/p{\\textgreater}
-{{\\textless}p{\\textgreater}Keine} rechte Unterscheidung zwischen {n-Variable} Data and Vis.. Es bleibt unklar, ob mi {1-Variable} Univariate Daten gemeint sind. Er schreibt aber \"by the time we get to three dat variables\" (p. 526) Es wird auf jeden Fall keine Unterscheidung gemacht in independent/dependent variables. objects werden als input variables (also independent) angenommen, aber es wird nciht erläutert, ob diese auch mehrere Dimensionen haben können. -\\&gt; Egal, ob independent Variable oder dependent - jede Variable kann eine Dimension des Diagramms in Anspruch nehmen. Wenn also geographische Breite und Länge variiert werden (independent) nehmen sie unter Umständen trotzdem zwei Dimensionen der Grafik in Anspruch.{\\textless}/p{\\textgreater}
-{\\textless}p{\\textgreater} {\\textless}/p{\\textgreater}}"""^^xsd:string ;
+      rdfs:comment """{{Achtung:} {PDF} ist {2007-Ausgabe,} wurde aber nahezu unverändert, bis auf Seitenzahlen
+p. 526: Filtering Widgets as Visualizations (controls consume space that is valuable)
+{Keine} rechte Unterscheidung zwischen {n-Variable} Data and Vis.. Es bleibt unklar, ob mi {1-Variable} Univariate Daten gemeint sind. Er schreibt aber \"by the time we get to three dat variables\" (p. 526) Es wird auf jeden Fall keine Unterscheidung gemacht in independent/dependent variables. objects werden als input variables (also independent) angenommen, aber es wird nciht erläutert, ob diese auch mehrere Dimensionen haben können. -\\&gt; Egal, ob independent Variable oder dependent - jede Variable kann eine Dimension des Diagramms in Anspruch nehmen. Wenn also geographische Breite und Länge variiert werden (independent) nehmen sie unter Umständen trotzdem zwei Dimensionen der Grafik in Anspruch.
+ }"""^^xsd:string ;
       dct:creator viso-bibliography:Card ;
       dct:date "1997"^^xsd:string ;
       dct:isPartOf <http://dx.doi.org/10.1201/9781420088861.fmatt> ;
