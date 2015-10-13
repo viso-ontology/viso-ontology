@@ -1,0 +1,150 @@
+# Saved by TopBraid on Tue Oct 13 20:33:12 CEST 2015
+# baseURI: http://purl.org/viso/helper/
+
+@prefix :        <http://purl.org/viso/helper/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix bixt:    <http://purl.org/viso/bibo-extension/> .
+@prefix cc-schema:  <http://creativecommons.org/schema.rdf#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix owl2xml:  <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix swstatus:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix viso-activity:  <http://purl.org/viso/activity/> .
+@prefix viso-anno:  <http://purl.org/viso/anno/> .
+@prefix viso-bibliography:  <http://purl.org/viso/bibliography/> .
+@prefix viso-data:  <http://purl.org/viso/data/> .
+@prefix viso-facts:  <http://purl.org/viso/facts/> .
+@prefix viso-graphic:  <http://purl.org/viso/graphic/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+viso-graphic:area
+      rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
+
+viso-graphic:color_brightness_named
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_hsl_hue
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_hsl_lightness
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_hsl_saturation
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_named
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_rgb
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:color_saturation_named
+      rdfs:subPropertyOf viso-graphic:has_non-spatial_graphic_attribute .
+
+viso-graphic:contained_by
+      rdfs:subPropertyOf viso-graphic:has_nary_graphic_o_2_o_relation_to .
+
+viso-graphic:containment_containee
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:containment_container
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:contains
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:has_graphic_attribute
+      rdfs:subPropertyOf viso-graphic:graphic_relations .
+
+viso-graphic:has_non-spatial_graphic_attribute
+      rdfs:subPropertyOf viso-graphic:has_graphic_attribute .
+
+viso-graphic:labeled_with
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:labeling_attachedBy
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
+
+viso-graphic:labeling_base
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:labeling_label
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:labeling_position
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
+
+viso-graphic:labels
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:linked_from
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:linked_to
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:linked_with
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:linkingDirected_endNode
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
+
+viso-graphic:linkingDirected_startNode
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
+
+viso-graphic:linking_connector
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:linking_node
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:relativeDistance_value
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:relative_distance_to
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:relatively_distant_object
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:shape_named
+      rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
+
+viso-graphic:size_named
+      rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
+
+viso-graphic:superimposed_by
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:superimposes
+      rdfs:subPropertyOf viso-graphic:has_n-ary_graphic_o_2_o_relation_to .
+
+viso-graphic:superimposition_byPercent
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties .
+
+viso-graphic:superimposition_overlappingPart
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:superimposition_superimposee
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:superimposition_superimposer
+      rdfs:subPropertyOf viso-graphic:n-ary_relation_helper_properties , viso-graphic:syntactic_roles .
+
+viso-graphic:text_value
+      rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
+
+viso-graphic:width
+      rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
+
+:     rdf:type owl:Ontology ;
+      rdfs:comment """This file is not a VISO module. It's only purpose is to store some statements that make it easier to work with properties in ontology editors like TopBraid Composer. 
+      	Storing them within the ontology modules destroys the semantics and may lead to reasoning problems."""^^xsd:string ;
+      rdfs:label "VISO helper statements for ontology editors"@en ;
+      dct:creator <http://purl.org/viso/JanPolowinski> ;
+      owl:versionInfo "0.1"^^xsd:string .
