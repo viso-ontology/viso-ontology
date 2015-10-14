@@ -21,6 +21,13 @@
 @prefix viso-graphic:  <http://purl.org/viso/graphic/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
+:     rdf:type owl:Ontology ;
+      rdfs:comment """This file is not a VISO module. It's only purpose is to store some statements that make it easier to work with properties in ontology editors like TopBraid Composer. 
+      	Storing them within the ontology modules destroys the semantics and may lead to reasoning problems."""^^xsd:string ;
+      rdfs:label "VISO helper statements for ontology editors"@en ;
+      dct:creator <http://purl.org/viso/JanPolowinski> ;
+      owl:versionInfo "0.1"^^xsd:string .
+
 viso-graphic:area
       rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
 
@@ -140,10 +147,3 @@ viso-graphic:text_value
 
 viso-graphic:width
       rdfs:subPropertyOf viso-graphic:has_spatial_graphic_attribute .
-
-:     rdf:type owl:Ontology ;
-      rdfs:comment """This file is not a VISO module. It's only purpose is to store some statements that make it easier to work with properties in ontology editors like TopBraid Composer. 
-      	Storing them within the ontology modules destroys the semantics and may lead to reasoning problems."""^^xsd:string ;
-      rdfs:label "VISO helper statements for ontology editors"@en ;
-      dct:creator <http://purl.org/viso/JanPolowinski> ;
-      owl:versionInfo "0.1"^^xsd:string .
