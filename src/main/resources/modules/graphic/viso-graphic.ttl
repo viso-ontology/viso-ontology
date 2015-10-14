@@ -19,7 +19,10 @@
 
 viso-graphic:
       rdf:type owl:Ontology ;
-      rdfs:comment """This ontology does not define facts. This instance data is stored in the <em>facts/empiric</em> module. Stable vocabulary terms are marked with the string <em>stable</em> using the property <em>term_status</em> from the <a href="http://www.w3.org/2003/06/sw-vocab-status#term_status">SemWeb Vocab Status ontology</a>."""^^xsd:string ;
+      rdfs:comment """This ontology does not define facts. This instance data is stored in the <em>facts/empiric</em> module. Stable vocabulary terms are marked with the string <em>stable</em> using the property <em>term_status</em> from the <a href="http://www.w3.org/2003/06/sw-vocab-status#term_status">SemWeb Vocab Status ontology</a>.
+      
+      Note that individuals may currently not be represented in the docu due to a bug in the documentation software.
+      """^^xsd:string ;
       rdfs:label "Grafik-Modul der Visualisierungsontologie (VISO)"@de , "Graphic module of the Visualisation Ontology (VISO)"@en ;
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
       dct:description "The graphic module of VISO defines concepts and relations from the field of graphics and visualisation."^^xsd:string ;
