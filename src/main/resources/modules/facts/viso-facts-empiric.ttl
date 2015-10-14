@@ -11,7 +11,7 @@
 :     rdf:type owl:Ontology ;
       rdfs:label "Empirical facts module of the Visualisation Ontology (VISO)"@en , "Empirische-Fakten-Modul der Visualisierungsontologie (VISO)"@de ;
       dct:creator <http://purl.org/viso/JanPolowinski> , <http://purl.org/viso/MartinVoigt> ;
-      dct:description """This extension to VISO/facts contains statements based on empirically found facts from experiments from the work of Mackinlay, MacEachren, Cleveland and McGill.  <em>The statements contained in this module are not shown by the LODE ontology documentation software!</em>
+      dct:description """This extension to VISO/facts contains statements based on empirically found facts from experiments from the work of Mackinlay, MacEachren, Cleveland and McGill.  <em>The statements contained in this module are not shown by the LODE ontology documentation software - watch the ontology source instead!</em>
       
       Since, at the moment, not every statement is assigned to a publication (what could be done by reification), here a list that shows which statement is from which publication:
 
