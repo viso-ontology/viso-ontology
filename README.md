@@ -1,7 +1,7 @@
 viso-ontology
 =============
 
-The current VISO Visualization Ontology. Statements from the legacy VISO ontology are moved here as needed by the VISO users.
+The current [Visualization Ontology](http://purl.org/viso/) (VISO). Statements from the [legacy VISO ontology](https://github.com/viso-ontology/legacy-ontologies) are moved here as needed by the VISO users.
 
 For details look into our [WIKI pages](https://github.com/viso-ontology/viso-ontology/wiki).
 
