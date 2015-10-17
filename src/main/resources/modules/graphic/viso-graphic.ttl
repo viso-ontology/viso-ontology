@@ -47,6 +47,8 @@ viso-graphic:Color
       rdfs:label "Color" ;
       rdfs:subClassOf viso-graphic:Color_Attribute .
       		
+viso-graphic:Color_Attribute 
+	  rdfs:subClassOf viso-graphic:Named_Visual_Attribute .      		
       		
 viso-graphic:Containment_Relation
       rdf:type owl:Class ;
@@ -113,10 +115,10 @@ viso-graphic:GraphicRelation
       dct:description "A relation between two graphic objects or an attribute that can be used to express something graphically. "^^xsd:string .
               
               
-viso-graphic:Graphic_Multiple
-      rdf:type owl:Class ;
-      rdfs:label "Graphic Multiple" ;
-      rdfs:subClassOf viso-graphic:Multi_Panel_Display .
+#viso-graphic:Graphic_Multiple
+#      rdf:type owl:Class ;
+#      rdfs:label "Graphic Multiple" ;
+#      rdfs:subClassOf viso-graphic:Multi_Panel_Display .
      
 viso-graphic:Graphic_Object
       rdf:type owl:Class ;
@@ -307,6 +309,15 @@ viso-graphic:Shape
       rdfs:subClassOf viso-graphic:Spatial_Attribute ;
       .
       
+viso-graphic:Spatial_Attribute 
+	  rdfs:subClassOf viso-graphic:Named_Visual_Attribute .
+	  
+viso-graphic:Spatial_Reference_Object 
+	  rdfs:subClassOf viso-graphic:Reference_Object .   	
+      
+viso-graphic:Static_Graphic_Representation
+      rdfs:subClassOf viso-graphic:Graphic_Representation .
+            
 viso-graphic:Superimposition_Relation
       rdf:type owl:Class ;
       rdfs:label "Superimposition"^^xsd:string ;
@@ -321,6 +332,16 @@ viso-graphic:Time_Chart
       rdfs:label "Time Chart"@en ;
       rdfs:subClassOf viso-graphic:Graphic_Representation ;
       .
+
+viso-graphic:Named_Visual_Attribute
+      rdf:type owl:Class ;
+      rdfs:label "Named Visual Attribute" ;
+      dct:description "Discrete named values a visual attribute may take."^^xsd:string ;
+      swstatus:term_status
+              "stable"^^xsd:string ;
+      skos:example "Instances: Red, Green, Blue, Big, Small, Dark, Round, ..."^^xsd:string , "Sub-classes: Color, Shape, Texture, ..."^^xsd:string ;
+      skos:historyNote "Values are now modeled as instances of subclasses of Named_Visual_Attribute. (E.g., \"big\" instance of \"Size\"). There is no superclass \"visual means\" anymore, since that would imply \"Red\" is a Visual Means as well which was conterintuitive. We actually only want Color to be a visual means. It was decided to create only the class \"Visual Attribute\", but no class \"Visual Attribute Value\", since its individual members are these values! Additionally there are values of continuous versions of these attributes (e.g. size = 13.45 vs. size = Big), stored as literals with the appropriate datatype. The visual attributes and relations that are used to map onto in a visual encoding mapping, are modelled as rdf:Properties. Cf. skos:related resources."^^xsd:string ;
+      skos:related viso-graphic:GraphicAttribute .
 
 viso-graphic:Visual_Value_List
 	  rdfs:label "Visual Value List"@en ;
