@@ -38,7 +38,7 @@ viso-graphic:Bar_Chart
 viso-graphic:Chronological_Link_Diagram
       rdf:type owl:Class ;
       rdfs:label "Chronological Link Diagram" ;
-      rdfs:subClassOf viso-graphic:Link_Diagram , viso-graphic:Time_Chart ;
+      rdfs:subClassOf viso-graphic:Hybrid_Graphic_Representation , viso-graphic:Link_Diagram , viso-graphic:Time_Chart ;
       swstatus:term_status
       		"stable"^^xsd:string .
       		
@@ -232,10 +232,18 @@ viso-graphic:Linking_Undirected_Relation
       swstatus:term_status
               "stable"^^xsd:string .
               
+viso-graphic:Map
+      rdf:type owl:Class ;
+      rdfs:label "Map"@en ;
+      rdfs:subClassOf viso-graphic:Graphic_Representation ;
+      dct:description <http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Planisph%C3%A6ri_c%C5%93leste.jpg/800px-Planisph%C3%A6ri_c%C5%93leste.jpg> ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+              
 viso-graphic:Path_Map
       rdf:type owl:Class ;
       rdfs:label "Path Map" ;
-      rdfs:subClassOf viso-graphic:Link_Diagram , viso-graphic:Map ;
+      rdfs:subClassOf viso-graphic:Hybrid_Graphic_Representation , viso-graphic:Link_Diagram , viso-graphic:Map ;
       swstatus:term_status
               "stable"^^xsd:string .
 
@@ -303,26 +311,17 @@ viso-graphic:Superimposition_Relation
       rdf:type owl:Class ;
       rdfs:label "Superimposition"^^xsd:string ;
       rdfs:subClassOf viso-graphic:Object-to-Object_Relation ;
-      rdfs:subClassOf
-              [ rdf:type owl:Class ;
-                owl:intersectionOf ([ rdf:type owl:Restriction ;
-                            owl:onProperty viso-graphic:superimposition_superimposee ;
-                            owl:someValuesFrom viso-graphic:Graphic_Object
-                          ] [ rdf:type owl:Restriction ;
-                            owl:allValuesFrom viso-graphic:Graphic_Object ;
-                            owl:onProperty viso-graphic:superimposition_superimposee
-                          ])
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom xsd:float ;
-                owl:onProperty viso-graphic:superimposition_byPercent
-              ] ;
       dct:description <http://www-st.inf.tu-dresden.de/semvis/ontologies/viso/img/vr_superimposition.png> ;
       swstatus:term_status
               "stable"^^xsd:string ;
       skos:editorialNote "Trial to allow n-ary relations at the example of superimposition. X superimposes Y by Z percent."^^xsd:string .
       
+viso-graphic:Time_Chart
+      rdf:type owl:Class ;
+      rdfs:label "Time Chart"@en ;
+      rdfs:subClassOf viso-graphic:Graphic_Representation ;
+      .
+
 viso-graphic:Visual_Value_List
 	  rdfs:label "Visual Value List"@en ;
 	  a rdfs:Class ;
@@ -331,6 +330,14 @@ viso-graphic:Visual_Value_List
               "stable"^^xsd:string ;
       rdfs:subClassOf rdf:List .
             
+            
+viso-graphic:Visualisation_Technique
+      rdf:type rdfs:Class ;
+      rdfs:label "Visualisation Technique"@en ;
+      swstatus:term_status
+              "stable"^^xsd:string .
+
+
 ####################
 #### PROPERTIES ####
 ####################
